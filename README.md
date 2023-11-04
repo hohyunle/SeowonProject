@@ -24,11 +24,6 @@
 # 서원대학교 5조 팀 프로젝트
 서원대학교 1학년 2학기 5조 팀 프로젝트 통합 저장소입니다.
 
-<<<<<<< HEAD
-=======
-goormIDE is a powerful cloud IDE service to maximize productivity for developers and teams.  
->>>>>>> 7d41d56b075297fa67bcd7a3ce69b5a9bb8e3d70
-
 * 구성
 	* **개발 환경**: `GoormIDE`
 	* **Programming Language:** `C`
@@ -36,8 +31,7 @@ goormIDE is a powerful cloud IDE service to maximize productivity for developers
 		 * `팀장(1)`
   		 * `부팀장(2)`
 		 * `팀원(6)`
-
-<<<<<<< HEAD
+         
 * 발표
     * 1. 학습계획서 (11.7)
     * 2. 1~5단원 (11.8)
@@ -54,8 +48,6 @@ goormIDE is a powerful cloud IDE service to maximize productivity for developers
     * N주차 프로그램 팀별과제: `./assignment/creation/
     
     
-=======
->>>>>>> 7d41d56b075297fa67bcd7a3ce69b5a9bb8e3d70
 ## 🔧 IDE WorkSpace Tip & Guide
 
 * Command feature
