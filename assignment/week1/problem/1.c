@@ -1,8 +1,7 @@
 /*
 * 프로그램 내용: 1주차 팀별과제 1번
-* 개발자: 
-* 학번:
-* 실습일:
+* 개발자: 연승현
+* 학번: 202311420 
 */
 
 #include <stdio.h>
@@ -27,4 +26,4 @@ int main(void) {
     return 0;
 }
 
-// cd /workspace/SeowonCProject/problem/week1/ && gcc ./1.c -o /tmp/a.out -lm && /tmp/a.out
+// cd /workspace/SeowonCProject/assignment/week1/problem/ && gcc ./1.c -o /tmp/a.out -lm && /tmp/a.out
