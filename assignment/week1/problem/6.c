@@ -9,14 +9,32 @@
 
 int main(void)
 {
-    int ascode[4];
-    int i;
-    for (i = 0; i < 4; i++) {
-        printf("%d번째 정수를 입력하시오 : ", i + 1);
-        scanf("%d", &ascode[i]);
+    char char1, char2, char3, char4;
+    int number;
+
+    printf("첫 번째 정수를 입력하시오 : ");
+    scanf("%c", &char1);
+    printf("두 번째 정수를 입력하시오 : ");
+    scanf(" %c", &char2);
+    printf("세 번째 정수를 입력하시오 : ");
+    scanf(" %c", &char3);
+    printf("네 번째 정수를 입력하시오 : ");
+    scanf(" %c", &char4);
+
+    if (char1 >= '0' && char1 <= '9') {
+        number = (char1 - '0');
     }
-    for (i = 0; i < 4; i++)
-        printf("%d", ascode[i]);
+    if (char2 >= '0' && char2 <= '9') {
+        number = number * 10 + (char2 - '0');
+    }
+    if (char3 >= '0' && char3 <= '9') {
+        number = number * 10 + (char3 - '0');
+    }
+    if (char4 >= '0' && char4 <= '9') {
+        number = number * 10 + (char4 - '0');
+    }
+
+    printf("%d\n", number);
 
     return 0;
 }
