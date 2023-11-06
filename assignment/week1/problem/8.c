@@ -7,8 +7,12 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int total_seconds, remain_seconds, hours, minutes, seconds;
+
+    printf("초 단위를 입력하세요. ");
+    scanf("%d", &total_seconds);
+    
     hours = total_seconds / 3600;               // 1 시간 = 3600 초
     remain_seconds = total_seconds % 3600;      // tatal_seconds를 시간으로 바꿔서 저장하고 남은 초를 다른 변수에 저장
     minutes = remain_seconds / 60;              // 1 분 = 60 초-> 몫은 분이 되고 나머지는 초가 된다
@@ -16,11 +20,6 @@ int main() {
 
     // 결과 출력
     printf("입력한 시간은 %d시 %d분 %d초입니다.\n", hours, minutes, seconds);
-
-    printf("초 단위를 입력하세요. ");
-    scanf_s("%d", &total_seconds);
-
-    // 입력된 초를 시, 분, 초로 변환
 
     return 0;
 }

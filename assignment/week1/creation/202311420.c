@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int dword;
 
     printf("10진수 정수를 입력하세요: ");

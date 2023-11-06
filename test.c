@@ -1,15 +1,12 @@
 #include <stdio.h>
 
+struct test {
+    int i;
+    char name[20];
+};
+
 int main() {
-    float rate = 1338.58;  // 환율: 1 달러 당 원화
-    int won;
-    float dollar;
-
-    printf("환전할 금액(원) 입력 >> ");
-    scanf("%d", &won);
-
-    dollar = won / rate;
-    printf("%d원을 환전하면 %.2f 달러입니다.\n", won, dollar);
-
+    struct test s1 = { 20, "연승현" };
+    printf("%s", s1.name);
     return 0;
 }
