@@ -32,3 +32,6 @@ int main() {
 
     return 0;
 }
+
+
+// cd /workspace/SeowonCProject/assignment/week1/creation/ && gcc ./202311825.c -o /tmp/a.out -lm && clear && /tmp/a.out

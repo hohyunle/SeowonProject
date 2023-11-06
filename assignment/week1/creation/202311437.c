@@ -20,3 +20,5 @@ int main(void)
 	printf("팩토리얼 : %d", factorial);
     return 0;
 }
+
+// cd /workspace/SeowonCProject/assignment/week1/creation/ && gcc ./202311437.c -o /tmp/a.out -lm && clear && /tmp/a.out

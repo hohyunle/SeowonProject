@@ -34,3 +34,5 @@ int main(void) {
 
     return 0;
 }
+
+// cd /workspace/SeowonCProject/assignment/week1/creation/ && gcc ./202311419.c -o /tmp/a.out -lm && clear && /tmp/a.out
