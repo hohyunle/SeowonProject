@@ -42,10 +42,10 @@
     * 7. 팀 프로젝트 최종 발표 (12.6)
 
 * 파일 경로
-    * 팀 프로젝트 파일: `./project/`
-    * N주차 프로그래밍 과제: `./assignment/`
-    * N주차 창작 과제: `./assignment/creation/`
-    * N주차 프로그램 팀별과제: `./assignment/creation/
+    * **팀 프로젝트 파일:** `cd ./project/`
+    * **N주차 프로그래밍 과제:** `cd ./assignment/`
+    * **N주차 창작 과제:** `cd ./assignment/creation/`
+    * **N주차 프로그램 팀별과제:** `cd ./assignment/creation/`
     
     
 ## 🔧 IDE WorkSpace Tip & Guide
@@ -54,9 +54,6 @@
 	* You can simply run your script using the shortcut icons on the top right.
 	* Check out `PROJECT > Common/Build/Run/Test/Find Command` in the top menu.
 	
-* Get URL and Port
-	* Click `PROJECT > URL/PORT` in top menu bar.
-	* You can get default URL/Port and add URL/Port in the top menu.
 
 * Useful shortcut
 	
