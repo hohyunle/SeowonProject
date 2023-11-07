@@ -1,7 +1,6 @@
 /*
 * 프로그램 내용: 1부터 100까지 수를 생성하여 힌트를 받으며 숫자를 맞추는 프로그램 (창작 문제)
-* 개발자: 정희태
-* 학번: 202011474
+* 개발자: 정희태 (202011474)
 */
 
 #include <stdio.h>
@@ -36,4 +35,4 @@ int main(void) {
 }
 
 
-// cd /workspace/SeowonCProject/assignment/week1/creation/ && gcc ./202311420.c -o /tmp/a.out -lm && clear && /tmp/a.out
+// cd /workspace/SeowonCProject/assignment/week1/creation/ && gcc ./202011474.c -o /tmp/a.out -lm && clear && /tmp/a.out
