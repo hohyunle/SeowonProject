@@ -1,26 +1,41 @@
 /*
-* 프로그램 내용: 2주차 팀별과제 1번
-* 개발자: 연승현 (202311420)
-* 문제: 6자리수의 2진수 정수를 키보드로부터 입력 받아, 10진수로 변환하여 출력하는 프로그램을 작성하세요.
+* 프로그램 내용: 2주차 팀별과제 3번
+* 개발자: 양혜성 (202311420)
+* 문제: 사용자에게 파스칼의 삼각형의 행의 수를 입력 받고 입력 받은 수만큼의 삼각형을 그려 출력하는 프로그램
 */
 
 #include <stdio.h>
 
-int main(void) {
-    int bin, dword = 0, pow = 1;
-
-    printf("6자리의 2진수 정수를 입력하세요: ");
-    scanf("%d", &bin);
-
-    // 주어진 2진수를 각 자릿수의 값과 2의 거듭제곱을 곱함 (ex. 110101 => 1 * 2^5 + 1 * 2^4 + 0 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 => 32 + 16 + 0 + 4 + 0 + 1 = 53)
-    while (bin > 0) {
-        int remainder = bin % 10;
-        dword += remainder * pow;
-        pow *= 2;
-        bin /= 10;
+long factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
     }
+    else {
+        return n * factorial(n - 1);
+    }
+}
 
-    printf("10진수로 변환된 값: %d\n", dword);
+long binomialCoefficient(int n, int k) {
+    return factorial(n) / (factorial(k) * factorial(n - k));
+}
+
+void Pascalstriangle(int rows) {
+    for (int i = 0; i <= rows; i++) {
+        for (int j = 0; j <= i; j++) {
+            printf("%ld ", binomialCoefficient(i, j));
+        }
+        printf("\n");
+    }
+}
+
+int main(void) {
+    int rows;
+
+    printf("행의 수: ");
+    scanf("%d", &rows);
+
+    Pascalstriangle(rows);
+
     return 0;
 }
 

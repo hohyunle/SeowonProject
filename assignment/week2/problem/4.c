@@ -1,26 +1,34 @@
 /*
-* 프로그램 내용: 2주차 팀별과제 1번
-* 개발자: 연승현 (202311420)
-* 문제: 6자리수의 2진수 정수를 키보드로부터 입력 받아, 10진수로 변환하여 출력하는 프로그램을 작성하세요.
+* 프로그램 내용: 2주차 팀별과제 4번
+* 개발자: 이정호(203311431)
+* 문제: 각도가 0도에서 360도까지 15도씩 증가할 때 함수 sine 그래프와 cosine 그래프를 하나 의 좌표에 동시에 출력하는 프로그램을 작성한다.
 */
 
 #include <stdio.h>
+#include <math.h>
 
-int main(void) {
-    int bin, dword = 0, pow = 1;
+#define PI 3.14159265359
 
-    printf("6자리의 2진수 정수를 입력하세요: ");
-    scanf("%d", &bin);
+int main() {
+    int angle;
+    float sine, cosine;
 
-    // 주어진 2진수를 각 자릿수의 값과 2의 거듭제곱을 곱함 (ex. 110101 => 1 * 2^5 + 1 * 2^4 + 0 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 => 32 + 16 + 0 + 4 + 0 + 1 = 53)
-    while (bin > 0) {
-        int remainder = bin % 10;
-        dword += remainder * pow;
-        pow *= 2;
-        bin /= 10;
+    printf("각도\tSine\tCosine\n");
+    for (angle = 0; angle <= 360; angle += 15) {
+        sine = sin(angle * PI / 180.0);
+        cosine = cos(angle * PI / 180.0);
+
+        if (fabs(sine - cosine) < 0.1) {
+            printf("%d\t*\t*\n", angle);
+        }
+        else if (sine < cosine) {
+            printf("%d\tS\tC\n", angle);
+        }
+        else {
+            printf("%d\t\tS\tC\n", angle);
+        }
     }
 
-    printf("10진수로 변환된 값: %d\n", dword);
     return 0;
 }
 
@@ -28,5 +36,4 @@ int main(void) {
 
 
 
-
-// cd /workspace/SeowonCProject/assignment/week2/problem/ && gcc ./1.c -o /tmp/a.out -lm && clear && /tmp/a.out
+// cd /workspace/SeowonCProject/assignment/week2/problem/ && gcc ./4.c -o /tmp/a.out -lm && clear && /tmp/a.out

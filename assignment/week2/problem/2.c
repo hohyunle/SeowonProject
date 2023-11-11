@@ -1,26 +1,30 @@
 /*
-* 프로그램 내용: 2주차 팀별과제 1번
-* 개발자: 연승현 (202311420)
-* 문제: 6자리수의 2진수 정수를 키보드로부터 입력 받아, 10진수로 변환하여 출력하는 프로그램을 작성하세요.
+* 프로그램 내용: 2주차 팀별과제 2번
+* 개발자: 김지성 (202110343)
+* 문제: 계차수열은 인접하는 항의 차로 이루어진 수열을 말한다. 점화식을 이용하여 표현한 다음의 계차수열에 대해 항까지 출력하는 함수와 프로그램을 작성한다.
 */
 
 #include <stdio.h>
 
-int main(void) {
-    int bin, dword = 0, pow = 1;
-
-    printf("6자리의 2진수 정수를 입력하세요: ");
-    scanf("%d", &bin);
-
-    // 주어진 2진수를 각 자릿수의 값과 2의 거듭제곱을 곱함 (ex. 110101 => 1 * 2^5 + 1 * 2^4 + 0 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 => 32 + 16 + 0 + 4 + 0 + 1 = 53)
-    while (bin > 0) {
-        int remainder = bin % 10;
-        dword += remainder * pow;
-        pow *= 2;
-        bin /= 10;
+int count(int n) {
+    int term = 1;
+    
+    printf("점화식\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", term);
+        term += i + 1;
     }
+    printf("\n");
+}
 
-    printf("10진수로 변환된 값: %d\n", dword);
+int main(void) {
+    int n;
+
+    printf("출력할 항의 개수를 입력 후 Enter>");
+    scanf("%d", &n);
+
+    count(n);
+    
     return 0;
 }
 
