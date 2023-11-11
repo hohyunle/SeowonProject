@@ -1,8 +1,12 @@
+// 기본 라이브러리
 #include <stdio.h>
 #include <stdbool.h>
 #include <json-c/json.h>
 #include <string.h>
+
+// 커스텀 라이브러리
 #include "./lib/fs.h"
+
 
 int main(void) {
     const char *filename = "./db/ledger.json";
@@ -13,9 +17,9 @@ int main(void) {
     // printf("saveStringToFile 함수 결과: %d\n", result);
 
     // 파일에서 문자열 데이터 읽어오기
-    char *loadedData = loadData(filename);
+    char *loadedData = loadFile(filename);
     if (loadedData != NULL) {
-        printf("loadStringFromFile 함수 결과: %s\n", loadedData);
+        printf("loadFile 함수 결과: %s\n", loadedData);
         free(loadedData);
     }
 

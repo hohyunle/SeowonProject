@@ -2,7 +2,16 @@
 #include <json-c/json.h>
 
 // 내역 고유번호로 검색해 결과 리턴
-json_object* searchEntryByUniqueId(const char *jsonData, const char *action, const char *uniqueId) {
+json_object* searchEntryByUniqueId(const char *jsonData, const char *action, int uniqueId) {
+    // 고유번호 미지정 시 오류 리턴
+    if (uniqueId == NULL) {
+        printf("JSON 데이터를 파싱할 수 없습니다.\n");
+        return NULL;
+    }
+
+    char *listId = NULL;
+    sprintf(listId, "%d", uniqueId);
+        
     // JSON 데이터 파싱
     json_object *root = json_tokener_parse(jsonData);
     if (root == NULL) {
@@ -23,7 +32,7 @@ json_object* searchEntryByUniqueId(const char *jsonData, const char *action, con
     json_object_object_foreach(incomeList, key, value) {
         json_object *tagObj = value;
         json_object_object_foreach(tagObj, entryId, entryObj) {
-            if (strcmp(entryId, uniqueId) == 0) {
+            if (strcmp(entryId, listId) == 0) {
                 resultObj = entryObj;
                 break;
             }

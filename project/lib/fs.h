@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool saveData(const char *filename, const char *data) {
+bool saveFile(const char *filename, const char *data) {
     // 파일 열기
     FILE *file = fopen(filename, "w");
     if (file == NULL) {
@@ -16,16 +16,16 @@ bool saveData(const char *filename, const char *data) {
     fclose(file);
 
     // 저장 완료 여부 확인
-    if (written == length) {
-        printf("파일에 데이터를 저장했습니다.\n");
-        return true;
-    } else {
+    if (written < length) {
         printf("데이터를 파일에 저장하는 중 오류가 발생했습니다.\n");
         return false;
     }
+
+    printf("파일에 데이터를 저장했습니다.\n");
+    return true;
 }
 
-char* loadData(const char *filename) {
+char* loadFile(const char *filename) {
     // 파일 열기
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
@@ -53,4 +53,3 @@ char* loadData(const char *filename) {
     fclose(file);
     return buffer;
 }
-
