@@ -33,4 +33,4 @@ int main(void) {
 
 
 
-// cd /workspace/SeowonCProject/assignment/week2/problem/ && gcc ./1.c -o /tmp/a.out -lm && clear && /tmp/a.out
+// cd /workspace/SeowonCProject/assignment/week2/problem/ && gcc ./2.c -o /tmp/a.out -lm && clear && /tmp/a.out

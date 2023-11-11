@@ -1,23 +1,34 @@
 /*
-* 프로그램 내용: 정수를 입력받아 팩토리얼 구하기 (창작 문제)
+* 프로그램 내용: BMI 구하는 함수 프로그램 (창작 문제)
 * 개발자: 이호현 (202311437)
 */
 
 #include <stdio.h>
 
-int main(void) 
+int bmi(double weight, double height);
+
+int main(void)
 {
-	int num;
-	int factorial = 1;
+	char name[20];
+	double weight, height;
 
-	printf("구할 숫자를 입력하시오 : ");
-	scanf("%d", &num);
+	printf("이름, 키(m)와 몸무게(kg)를 입력하시오 : ");
+	scanf("%s %lf %lf", name, 20, &height, &weight);
 
-	for (int i = 1; i <= num; i++)
-		factorial *= i;
+	double resultbmi = bmi(weight, height);
 
-	printf("팩토리얼 : %d", factorial);
-    return 0;
+	printf("%s님의 BMI 지수 : %.2lf", name, resultbmi);
+
+	return 0;
 }
 
-// cd /workspace/SeowonCProject/assignment/week1/creation/ && gcc ./202311437.c -o /tmp/a.out -lm && clear && /tmp/a.out
+int bmi(double weight, double height)
+{
+	double bmi;
+	bmi = weight / (height * height);
+
+	return bmi;
+}
+
+
+// cd /workspace/SeowonCProject/assignment/week2/creation/ && gcc ./202311437.c -o /tmp/a.out -lm && clear && /tmp/a.out
