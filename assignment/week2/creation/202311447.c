@@ -3,7 +3,26 @@
 * 개발자: 홍정일 (202311447)
 */
 
+#include <stdio.h>
 
+int sum(int x, int y);
+
+int main(void)
+{
+    int x, y;
+
+    printf("x, y값을 입력하세요 : ");
+    scanf("%d %d", &x, &y);
+    printf("%d + %d = %d", x, y, sum(x, y));
+    return 0;
+}
+
+int sum(int x, int y)
+{
+    int sum_result;
+    sum_result = x + y;
+    return sum_result;
+}
 
 
 // cd /workspace/SeowonCProject/assignment/week2/creation/ && gcc ./202311447.c -o /tmp/a.out -lm && clear && /tmp/a.out

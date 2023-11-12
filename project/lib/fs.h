@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+
+// 가계부 데이터 저장 함수
 bool saveFile(const char *filename, const char *data) {
     // 파일 열기
     FILE *file = fopen(filename, "w");
@@ -25,6 +27,8 @@ bool saveFile(const char *filename, const char *data) {
     return true;
 }
 
+
+// 가계부 파일 문자열 리턴 함수
 char* loadFile(const char *filename) {
     // 파일 열기
     FILE *file = fopen(filename, "r");
