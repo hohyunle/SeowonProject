@@ -21,12 +21,12 @@ int main(void) {
     char *examText = "{\"날짜\": \"2023-11-09\",\"금액\": \"5000\",\"수입처\": \"용돈\",\"메모\": \"\",\"카테고리\": \"tag2\"}";
     char *incomeData = loadFile(INCOME_FILE_PATH);    // 수입 내역
     if (incomeData != NULL) {
-        printf("\n%s\n", incomeData);
-        free(incomeData);
+        // printf("\n%s\n", incomeData);
+        // free(incomeData);
         
-        // char *getResult = addIncomeList(incomeData, "수입목록", 5, examText);
-        // printf("\n%s\n", getResult);
-        // free(getResult);
+        char *getResult = addIncomeList(incomeData, "수입목록", 5, examText);
+        printf("\n%s\n", getResult);
+        free(getResult);
     }
 
     return 0;
