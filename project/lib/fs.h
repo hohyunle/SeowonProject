@@ -1,3 +1,6 @@
+#ifndef FS_H
+#define FS_H
+
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -55,3 +58,5 @@ char* loadFile(const char *filename) {
     fclose(file);
     return buffer;
 }
+
+#endif // FS_H
