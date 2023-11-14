@@ -6,24 +6,27 @@
 
 // 커스텀 라이브러리
 #include "./lib/fs.h"
+#include "./lib/json.h"
 
 // 매크로 변수
-#define FILE_PATH "./db/ledger.json"
+#define INCOME_FILE_PATH "./db/income.json"
+#define SPEND_FILE_PATH "./db/spend.json"
+
 
 int main(void) {
-    const char *filename = "./db/ledger.json";
-    const char *data = "Hello";
-    
     // 파일에 문자열 데이터 저장
     // bool result = saveFile(FILE_PATH, data);
     // printf("saveStringToFile 함수 결과: %d\n", result);
 
-    // 파일에서 문자열 데이터 읽어오기
-    
-    char *loadedData = loadFile(FILE_PATH);
-    if (loadedData != NULL) {
-        printf("loadFile 함수 결과: %s\n", loadedData);
-        free(loadedData);
+    char *examText = "{\"날짜\": \"2023-11-09\",\"금액\": \"5000\",\"수입처\": \"용돈\",\"메모\": \"\",\"카테고리\": \"tag2\"}";
+    char *incomeData = loadFile(INCOME_FILE_PATH);    // 수입 내역
+    if (incomeData != NULL) {
+        printf("\n%s\n", incomeData);
+        free(incomeData);
+        
+        // char *getResult = addIncomeList(incomeData, "수입목록", 5, examText);
+        // printf("\n%s\n", getResult);
+        // free(getResult);
     }
 
     return 0;

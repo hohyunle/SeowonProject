@@ -22,7 +22,6 @@ bool saveFile(const char *filename, const char *data) {
         printf("데이터를 파일에 저장하는 중 오류가 발생했습니다.\n");
         return false;
     }
-
     printf("파일에 데이터를 저장했습니다.\n");
     return true;
 }
@@ -48,8 +47,7 @@ char* loadFile(const char *filename) {
         // 파일 내용 읽기
         fread(buffer, fileSize, 1, file);
         buffer[fileSize] = '\0';
-
-        printf("파일에서 데이터를 읽어왔습니다.\n");
+        // printf("파일에서 데이터를 읽어왔습니다.\n");
     } else {
         printf("버퍼를 할당할 수 없습니다.\n");
     }
