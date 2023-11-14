@@ -26,8 +26,7 @@ int main(void) {
         free(loadedData);
     }
 
-    
     return 0;
 }
 
-// -ljson-c
+// cd /workspace/SeowonCProject/project/ && gcc ./main.c -o /tmp/a.out -lm -ljson-c && clear && /tmp/a.out

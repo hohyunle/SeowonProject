@@ -13,7 +13,7 @@ int main(void)
 	double weight, height;
 
 	printf("이름, 키(m)와 몸무게(kg)를 입력하시오 : ");
-	scanf("%s %lf %lf", name, 20, &height, &weight);
+	scanf("%s %lf %lf", &name, &height, &weight);
 
 	double resultbmi = bmi(weight, height);
 

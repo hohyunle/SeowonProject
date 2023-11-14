@@ -76,5 +76,5 @@ int main(void) {
     return 0;
 }
 
-s
+
 // cd /workspace/SeowonCProject/assignment/week2/creation/ && gcc ./202010319.c -o /tmp/a.out -lm && clear && /tmp/a.out
