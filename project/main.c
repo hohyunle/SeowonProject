@@ -26,8 +26,9 @@ int main(void) {
     // free(incomeData);
 
     // int getResult = setSpendLimit(incomeData, "300000");
-    int getResult = getSpendLimit(listData);
-    printf("%d\n", getResult);
+    char* getResult = findDate(listData, "지출목록", "2023-11");
+    // char* getResult = findTag(listData, "지출목록", "tag1");
+    printf("%s\n", getResult);
     // free(getResult);
     
 

@@ -161,37 +161,110 @@ char* setSpendPromise(char* jsonData, char* listId, char* HistoryData) {
     return result;
 }
 
-char* findDate(char* jsonData, char* date) {
-        struct json_object *root = json_tokener_parse(jsonData);
+// 내역 날짜 검색
+char* findDate(char* jsonData, char* actList, char* targetDate) {
+    struct json_object* root = json_tokener_parse(jsonData);
 
-    // "지출목록" 객체 가져오기
-    struct json_object *spendList;
-    if (json_object_object_get_ex(root, "지출목록", &spendList)) {
-        printf("2023-11에 해당하는 데이터:\n");
+    // "지출|수입 목록" 객체 가져오기
+    struct json_object* typeList;
+    if (json_object_object_get_ex(root, actList, &typeList)) {
+        size_t resultLength = 1; // 결과 문자열 길이 (초기값 1)
+        char* result = (char*)malloc(resultLength);
+        result[0] = '\0'; // 문자열 초기화
 
         // 각 내역의 "날짜" 항목을 확인하여 필터링
-        json_object_object_foreach(spendList, key, value) {
-            struct json_object *dateObj;
+        json_object_object_foreach(typeList, key, value) {
+            struct json_object* dateObj;
             if (json_object_object_get_ex(value, "날짜", &dateObj)) {
-                const char *date = json_object_get_string(dateObj);
+                const char* date = json_object_get_string(dateObj);
 
-                // 날짜가 2023-11로 시작하는 경우에만 출력
-                if (strstr(date, targetMonth) == date) {
-                    printf("Key: %s\n", key);
-                    printf("날짜: %s\n", date);
-                    
-                    // 기타 필요한 정보 출력
-                    // 예를 들면 "금액", "지출처" 등
-                    
-                    printf("\n");
+                // 날짜가 targetDate로 시작하는 경우에만 문자열에 추가
+                if (strncmp(date, targetDate, strlen(targetDate)) == 0) {
+                    // 필요한 문자열 길이 계산
+                    size_t keyLength = strlen(key);
+                    size_t dateLength = strlen(date);
+                    size_t infoLength = json_object_object_length(value) * 50; // 예상되는 정보 길이
+
+                    // 동적으로 메모리 재할당하여 문자열 길이 늘리기
+                    resultLength += keyLength + dateLength + infoLength;
+                    result = (char*)realloc(result, resultLength);
+
+                    // 문자열에 정보 추가
+                    sprintf(result + strlen(result), "내역 고유번호: %s\n", key);
+
+                    // 기타 필요한 정보 추가
+                    json_object_object_foreach(value, innerKey, innerValue) {
+                        // "날짜" 항목은 추가하지 않도록 처리
+                        // if (strcmp(innerKey, "날짜") != 0) {
+                        //     sprintf(result + strlen(result), "%s: %s\n", innerKey, json_object_get_string(innerValue));
+                        // }
+                        sprintf(result + strlen(result), "%s: %s\n", innerKey, json_object_get_string(innerValue));
+                    }
+
+                    strcat(result, "\n"); // 줄바꿈 추가
                 }
             }
         }
+
+        json_object_put(root);
+        return result;
     } else {
         printf("지출목록을 찾을 수 없습니다.\n");
+        json_object_put(root);
+        return NULL;
     }
+}
 
-    json_object_put(root);
+// 내역 카테고리 검색
+char* findTag(char* jsonData, char* actList, char* targetTag) {
+    struct json_object* root = json_tokener_parse(jsonData);
+
+    // "지출|수입 목록" 객체 가져오기
+    struct json_object* typeList;
+    if (json_object_object_get_ex(root, actList, &typeList)) {
+        size_t resultLength = 1; // 결과 문자열 길이 (초기값 1)
+        char* result = (char*)malloc(resultLength);
+        result[0] = '\0'; // 문자열 초기화
+
+        // 각 내역의 "카테고리" 항목을 확인하여 필터링
+        json_object_object_foreach(typeList, key, value) {
+            struct json_object* tagObj;
+            if (json_object_object_get_ex(value, "카테고리", &tagObj)) {
+                const char* tag = json_object_get_string(tagObj);
+
+                // 카테고리가 targetTag로 시작하는 경우에만 문자열에 추가
+                if (strncmp(tag, targetTag, strlen(targetTag)) == 0) {
+                    // 필요한 문자열 길이 계산
+                    size_t keyLength = strlen(key);
+                    size_t tagLength = strlen(tag);
+                    size_t infoLength = json_object_object_length(value) * 50; // 예상되는 정보 길이
+
+                    // 동적으로 메모리 재할당하여 문자열 길이 늘리기
+                    resultLength += keyLength + tagLength + infoLength;
+                    result = (char*)realloc(result, resultLength);
+
+                    // 문자열에 정보 추가
+                    sprintf(result + strlen(result), "내역 고유번호: %s\n", key);
+
+                    // 기타 필요한 정보 추가
+                    json_object_object_foreach(value, innerKey, innerValue) {
+                        // "날짜" 항목은 추가하지 않도록 처리
+                        // if (strcmp(innerKey, "날짜") != 0) {
+                        //     sprintf(result + strlen(result), "%s: %s\n", innerKey, json_object_get_string(innerValue));
+                        // }
+                        sprintf(result + strlen(result), "%s: %s\n", innerKey, json_object_get_string(innerValue));
+                    }
+                    strcat(result, "\n"); // 줄바꿈 추가
+                }
+            }
+        }
+        json_object_put(root);
+        return result;
+    } else {
+        printf("지출목록을 찾을 수 없습니다.\n");
+        json_object_put(root);
+        return NULL;
+    }
 }
 
 

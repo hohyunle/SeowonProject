@@ -32,11 +32,14 @@ char* filterDataByMonth(const char* jsonData, const char* targetMonth) {
                     result = (char*)realloc(result, resultLength);
 
                     // 문자열에 정보 추가
-                    sprintf(result + strlen(result), "Key: %s\n날짜: %s\n", key, date);
+                    sprintf(result + strlen(result), "내역 고유번호: %s\n날짜: %s\n", key, date);
 
                     // 기타 필요한 정보 추가
                     json_object_object_foreach(value, innerKey, innerValue) {
-                        sprintf(result + strlen(result), "%s: %s\n", innerKey, json_object_get_string(innerValue));
+                        // "날짜" 항목은 추가하지 않도록 처리
+                        if (strcmp(innerKey, "날짜") != 0) {
+                            sprintf(result + strlen(result), "%s: %s\n", innerKey, json_object_get_string(innerValue));
+                        }
                     }
 
                     strcat(result, "\n"); // 줄바꿈 추가
@@ -54,8 +57,9 @@ char* filterDataByMonth(const char* jsonData, const char* targetMonth) {
 }
 
 
+
 int main() {
-    const char *jsonData = "{\"지출목록\":{\"3\":{\"날짜\":\"2023-11-09\",\"금액\":\"1000\",\"지출처\":\"편의점\",\"메모\":\"\",\"카테고리\":\"tag1\"},\"4\":{\"날짜\":\"2023-11-09\",\"금액\":\"5000\",\"지출처\":\"편의점\",\"메모\":\"\",\"카테고리\":\"tag2\"}}}";
+    const char *jsonData = "{\"지출목록\":{\"3\":{\"날짜\":\"2023-11-09\",\"금액\":\"1000\",\"지출처\":\"편의점\",\"메모\":\"\",\"카테고리\":\"tag1\"},\"4\":{\"날짜\":\"2023-12-09\",\"금액\":\"5000\",\"지출처\":\"편의점\",\"메모\":\"\",\"카테고리\":\"tag2\"}}}";
 
     char *result = filterDataByMonth(jsonData, "2023-11");
 
