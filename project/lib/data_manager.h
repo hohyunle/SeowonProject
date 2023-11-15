@@ -1,9 +1,10 @@
-#ifndef JSON_H
-#define JSON_H
+#ifndef DATA_MANAGER_H
+#define DATA_MANAGER_H
 
 // 기본 라이브러리
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <json-c/json.h>
 
 // 커스텀 라이브러리
@@ -268,4 +269,4 @@ char* findTag(char* jsonData, char* actList, char* targetTag) {
 }
 
 
-#endif // JSON_H
+#endif // DATA_MANAGER_H

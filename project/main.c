@@ -6,7 +6,7 @@
 
 // 커스텀 라이브러리
 #include "./lib/fs.h"
-#include "./lib/json.h"
+#include "./lib/data_manager.h"
 
 // 매크로 변수
 #define INCOME_FILE_PATH "./db/income.json"
