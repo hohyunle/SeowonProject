@@ -20,12 +20,13 @@ int main(void) {
 
     char *examText = "{\"날짜\": \"2023-11-09\",\"금액\": \"5000\",\"수입처\": \"용돈\",\"메모\": \"\",\"카테고리\": \"tag2\"}";
     char *uniqueId = "15";
-    char *incomeData = loadFile(SPEND_FILE_PATH);  
+    char *listData = loadFile(SPEND_FILE_PATH);
     
     // printf("\n%s\n", incomeData);
     // free(incomeData);
 
-    int getResult = setSpendLimit(incomeData, "300000");
+    // int getResult = setSpendLimit(incomeData, "300000");
+    int getResult = getSpendLimit(listData);
     printf("%d\n", getResult);
     // free(getResult);
     

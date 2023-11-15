@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     // 초기 상품 정보 및 최저 상품 가격 정의
     char product1[] = "커피";
     char product2[] = "콜라";
@@ -24,10 +24,11 @@ int main() {
     scanf("%d", &amount);
 
     // 입력된 금액을 기준으로 판매 가능 여부 판단
-    if (amount < min_price) {
+    if (amount < min_price || amount <= 0) {
         printf("현재 금액이 최저 상품 가격보다 작습니다. 거스름돈: %d원\n", amount);
     }
     else {
+        while(amount > min_price) {
         // 상품 목록 출력
         printf("\n상품 목록:\n");
         printf("1. %s(%d원)\n", product1, price1);
@@ -68,11 +69,14 @@ int main() {
 
         if (amount >= selected_price) {
             printf("구매가능! 잔액: %d원\n", amount - selected_price);
+            amount = amount - selected_price;
         }
         else {
             printf("구매 불가! 현재 금액으로는 구매가 불가능합니다.\n");
+            }
         }
     }
+    
     return 0;
 }
 

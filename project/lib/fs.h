@@ -25,7 +25,7 @@ bool saveFile(const char *filename, const char *data) {
         printf("데이터를 파일에 저장하는 중 오류가 발생했습니다.\n");
         return false;
     }
-    printf("파일에 데이터를 저장했습니다.\n");
+    // printf("파일에 데이터를 저장했습니다.\n");
     return true;
 }
 
