@@ -52,16 +52,16 @@
 
 * **사용 라이브러리**
 
-    * **표준 라이브러리**
+    * **표준 라이브러리(Standard Library)**
         * `stdio.h`
         * `string.h`
         * `stdbool.h`
-        * `json-c/json.h`
+        * `json-c/json.h : JSON(JavaScript Object Notation) 데이터를 처리하기 위한 라이브러리`
         
-    * **사용자 정의 라이브러리**
-    	* `fs.h`
-        * `data_manager.h`
-        * `prompt.h`
+    * **사용자 정의 라이브러리(User-defined Library)**
+    	* `fs.h : 파일 입출력 관련 라이브러리`
+        * `data_manager.h : 데이터 수정 및 검색 라이브러리`
+        * `prompt.h : UI 관련 라이브러리`
         
 ## 🔧 IDE WorkSpace Tip & Guide
 
