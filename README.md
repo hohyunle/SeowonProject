@@ -24,7 +24,7 @@
 # 🌐 서원대학교 5조 팀 프로젝트
 서원대학교 1학년 2학기 5조 팀 프로젝트 통합 저장소입니다.
      
-     ![C](https://img.shields.io/badge/-C-00599C?style=flat&logo=C&logoColor=white)
+![C](https://img.shields.io/badge/-C-00599C?style=flat&logo=C&logoColor=white)
      
      
 * 구성
