@@ -79,10 +79,9 @@
         
     * **사용자 정의 라이브러리 세부 내용**
     	* **data_manager.h**
-        <br>
         
 | 함수(Function) | 역할(Role) | 인수(Argument) | 출력 값(Return Value) |
-|:--------------:|:---------:|:-------------:|:--------------------:|
+|:--------------:|:---------:|:-------------:|:--------------------|
 | char* addIncomeList(char* jsonData, char* listId, char* HistoryData) | 수입 내역을 추가합니다. | 수입내역(char), 내역 고유번호(int), 새로운 추가내역(char) | 수정된 수입내역(char) |
 | char* addSpendList(char* jsonData, char* listId, char* HistoryData) | 지출 내역을 추가합니다. | 지출내역(char), 내역 고유번호(int), 새로운 추가내역(char) | 수정된 지출내역(char) |
 | int setSpendLimit(char* jsonData, char* spendPrice) | 지출 한도를 설정합니다. | 지출내역(char), 지출 한도액(int) | 지출 한도액 - 총지출액(int) |
