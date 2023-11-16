@@ -26,7 +26,8 @@
      
 * 구성
 	* **개발 환경**: `GoormIDE (Ubuntu 18.04.6), Visual Studio Code (Windows 10)`
-	* **Programming Language:** ![C](https://img.shields.io/badge/-C-00599C?style=flat&logo=C&logoColor=white)
+	* **Programming Language:** <img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=Python&logoColor=white"/>
+
 	* **팀 구성**
 		 * **팀장(1):** `연승현(202311420)`
   		 * **부팀장(2):** `정희태(202011474), 이호현(202311437)`
