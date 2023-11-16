@@ -65,7 +65,7 @@
         
 * **라이브러리 세부 소개 및 기능**
 
-    * 라이브러리 소개
+    * **라이브러리 소개**
     
         | 	라이브러리    	|	 	 						소개 								   |
         | :---------------: | :----------------------------------------------------------------:|
@@ -76,7 +76,21 @@
         | fs.h   			| 파일 입출력 관련 라이브러리      										| 
         | data_manager.h  	| 데이터 수정 및 검색 라이브러리   									   | 
         | prompt.h        	| UI 관련 라이브러리     		   									   |
+        
+    * **사용자 정의 라이브러리 세부 내용**
     
+    	* **data_manager.h**
+        
+            | 함수(Function) | 인수(Argument) | 역할(Role) | 출력 값(Return Value) |
+            |:-------------:|:-----:|:------:|:--------:|
+            | char* addIncomeList(char* jsonData, char* listId, char* HistoryData) | 수입내역(char), 내역 고유번호(int), 새로운 내역(char) | 기능을 수행합니다. | 수정된 수입내역(char) |
+            | addIncomeList | 수입내역(char), 내역 고유번호(int), 새로운 내역(char) | 기능을 수행합니다. | 수정된 수입내역(char) |
+            | addIncomeList | 수입내역(char), 내역 고유번호(int), 새로운 내역(char) | 기능을 수행합니다. | 수정된 수입내역(char) |
+            | addIncomeList | 수입내역(char), 내역 고유번호(int), 새로운 내역(char) | 기능을 수행합니다. | 수정된 수입내역(char) |
+            | addIncomeList | 수입내역(char), 내역 고유번호(int), 새로운 내역(char) | 기능을 수행합니다. | 수정된 수입내역(char) |
+            | addIncomeList | 수입내역(char), 내역 고유번호(int), 새로운 내역(char) | 기능을 수행합니다. | 수정된 수입내역(char) |
+            | addIncomeList | 수입내역(char), 내역 고유번호(int), 새로운 내역(char) | 기능을 수행합니다. | 수정된 수입내역(char) |
+        
 ## 🔧 IDE WorkSpace Tip & Guide
 
 * Command feature
