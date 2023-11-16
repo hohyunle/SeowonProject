@@ -50,13 +50,13 @@
     
 ## 📝 가계부 프로그램 개발 프로젝트
 
-* 라이브러리
-    * 표준 라이브러리
-        * **stdio.h**
-        * **string.h**
-        * **stdbool.h**
-        * **json-c/json.h**
-    * 사용자 정의 라이브러리
+* **사용 라이브러리**
+    * **표준 라이브러리**
+        * `**stdio.h**`
+        * `**string.h**`
+        * `**stdbool.h**`
+        * `**json-c/json.h**`
+    * **사용자 정의 라이브러리**
 
 ## 🔧 IDE WorkSpace Tip & Guide
 
