@@ -23,9 +23,9 @@
 
 # 🌐 서원대학교 5조 팀 프로젝트
 서원대학교 1학년 2학기 5조 팀 프로젝트 통합 저장소입니다.
-     ```markdown
+     
      ![C](https://img.shields.io/badge/-C-00599C?style=flat&logo=C&logoColor=white)
-     ```
+     
      
 * 구성
 	* **개발 환경**: `GoormIDE (Ubuntu 18.04.6), Visual Studio Code (Windows 10)`
