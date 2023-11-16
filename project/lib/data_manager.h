@@ -66,7 +66,7 @@ char* addSpendList(char* jsonData, char* listId, char* HistoryData) {
     return result;
 }
 
-// 지출 내역 추가 (RETURN 지출한도금액 - 총지출액)
+// 지출 한도 설정 (RETURN 지출한도금액 - 총지출액)
 int setSpendLimit(char* jsonData, char* spendPrice) {
     struct json_object* root;           // 전체 리스트 내역
     struct json_object* typeList;       // 수입 | 지출내역
@@ -101,7 +101,7 @@ int setSpendLimit(char* jsonData, char* spendPrice) {
     return result;
 }
 
-// 지출 내역 알림 (RETURN 지출한도금액 - 총지출액)
+// 지출 내역 현황 출력 (RETURN 지출한도금액 - 총지출액)
 int getSpendLimit(char* jsonData) {
     struct json_object* root;           // 전체 리스트 내역
     struct json_object* typeList;       // 수입 | 지출내역
@@ -136,7 +136,7 @@ int getSpendLimit(char* jsonData) {
     return result;
 }
 
-// 지출 내역 추가 (RETURN 수정된 데이터)
+// 지출 예약 내역 추가 (RETURN 수정된 데이터)
 char* setSpendPromise(char* jsonData, char* listId, char* HistoryData) {
     struct json_object* root;           // 전체 리스트 내역
     struct json_object* typeList;       // 수입 | 지출내역
