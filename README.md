@@ -26,8 +26,7 @@
      
 * 구성
 	* **개발 환경**: `GoormIDE (Ubuntu 18.04.6), Visual Studio Code (Windows 10)`
-	* **Programming Language:** <img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=Python&logoColor=white"/>
-
+	* **Programming Language:** ![C](https://img.shields.io/badge/-C-00599C?style=flat&logo=C&logoColor=white)
 	* **팀 구성**
 		 * **팀장(1):** `연승현(202311420)`
   		 * **부팀장(2):** `정희태(202011474), 이호현(202311437)`
@@ -51,7 +50,13 @@
     
 ## 📝 가계부 프로그램 개발 프로젝트
 
-* 구성
+* 라이브러리
+    * 표준 라이브러리
+        * **stdio.h**
+        * **string.h**
+        * **stdbool.h**
+        * **json-c/json.h**
+    * 사용자 정의 라이브러리
 
 ## 🔧 IDE WorkSpace Tip & Guide
 
