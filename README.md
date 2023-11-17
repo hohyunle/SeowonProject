@@ -80,7 +80,7 @@
         | prompt.h        	| UI 관련 라이브러리     		   									   |
         
     * **사용자 정의 라이브러리 세부 내용**
-    	* **data_manager.h**
+* **data_manager.h**
         
 | 함수(Function) | 역할(Role) | 인수(Argument) | 출력 값(Return Value) |
 |:--------------:|:---------:|:-------------:|:--------------------|
@@ -93,7 +93,7 @@
 | char* findDate(char* jsonData, char* actList, char* targetDate) | 수입 및 지출 내역을 날짜로 검색합니다. | 지출내역(char), 날짜(char) | 일치 내역들(char) |
 | char* findTag(char* jsonData, char* actList, char* targetTag) | 수입 및 지출 내역을 카테고리로 검색합니다. | 지출내역(char), 카테고리(char) | 일치 내역들(char) |
 
-    	* **data_mnager.h**
+* **data_mnager.h**
         
 | 함수(Function) | 역할(Role) | 인수(Argument) | 출력 값(Return Value) |
 |:--------------:|:---------:|:-------------:|:--------------------|
