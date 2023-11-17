@@ -29,8 +29,8 @@
 └─────────────────────────────────────────────────────────────┘
 ```
 
-# 🌐 서원대학교 5조 팀 프로젝트
-서원대학교 1학년 2학기 5조 팀 프로젝트 통합 저장소입니다.    
+# 🌐 서원대학교 프로그래밍 II 5조 팀 프로젝트
+2023년 서원대학교 프로그래밍 II 1학년 2학기 5조 팀 프로젝트 통합 저장소입니다.    
      
 * 구성
 	* **개발 환경**: `Visual Studio Code (Windows 10), GoormIDE (Ubuntu 18.04.6)`
@@ -52,8 +52,8 @@
 * 파일 경로
     * **팀 프로젝트 파일:** `cd ./project/`
     * **N주차 프로그래밍 과제:** `cd ./assignment/`
-    * **N주차 창작 과제:** `cd ./assignment/creation/`
-    * **N주차 프로그램 팀별과제:** `cd ./assignment/creation/`
+    * **N주차 창작 과제:** `cd ./assignment/week1/creation/`
+    * **N주차 프로그램 팀별과제:** `cd ./assignment/week1/problem/`
     * **파일 실행 코드 (FILE.c):** `gcc ./FILE.c -o /tmp/a.out -lm && clear && /tmp/a.out`
     
 ## 📝 가계부 프로그램 개발 프로젝트
