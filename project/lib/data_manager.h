@@ -14,11 +14,33 @@
 #define SPEND_LIMIT_FILE_PATH "./db/spendLimit.txt"
 #define RECENT_LISTID_FILE_PATH "./db/uniqueNum.txt"
 
+// 함수 목록
+int updatelistId(char* listId); 									// 내역 고유번호를 업데이트 및 출력합니다.
+char* addIncomeList(char* jsonData, char* HistoryData);				// 수입 내역을 추가합니다.
+char* addSpendList(char* jsonData, char* HistoryData);				// 지출 내역을 추가합니다.
+int setSpendLimit(char* jsonData, char* spendPrice);				// 지출 한도를 설정합니다.
+int getSpendLimit(char* jsonData);									// 지출 내역 현황을 출력합니다.
+char* setSpendPromise(char* jsonData, char* HistoryData);			// 지출 예약 내역을 추가합니다.
+char* findDate(char* jsonData, char* actList, char* targetDate);	// 수입 및 지출 내역을 날짜로 검색합니다.
+char* findTag(char* jsonData, char* actList, char* targetTag);		// 수입 및 지출 내역을 카테고리로 검색합니다.
+    
+
+// 내역 고유번호 업데이트 및 출력 (RETURN 새로운 내역 고유번호)
+int updatelistId(char* listId) {
+    char PushlistId[9999];							// 저장할 내역 고유번호
+    int NewlistId = (int)(atoi(listId) + 1);		// 새로운 내역 고유번호
+    sprintf(PushlistId, "%d", NewlistId);			// 문자열 변경
+    
+    saveFile(RECENT_LISTID_FILE_PATH, PushlistId);	// 내역 고유번호 파일 저장
+    return NewlistId;
+}
+
 // 수입 내역 추가 (RETURN 수정된 데이터)
-char* addIncomeList(char* jsonData, char* listId, char* HistoryData) {
-    struct json_object* root;           // 전체 리스트 내역
-    struct json_object* typeList;       // 수입 | 지출내역
-    struct json_object* listInfo;       // 내역 세부 데이터
+char* addIncomeList(char* jsonData, char* HistoryData) {
+    struct json_object* root;           				// 전체 리스트 내역
+    struct json_object* typeList;       				// 수입 | 지출내역
+    struct json_object* listInfo;       				// 내역 세부 데이터
+    char* listId = loadFile(RECENT_LISTID_FILE_PATH);	// 내역 고유번호
     
     // 기존 JSON 데이터 파싱
     root = json_tokener_parse(jsonData);
@@ -37,14 +59,16 @@ char* addIncomeList(char* jsonData, char* listId, char* HistoryData) {
     
     // 메모리 누수 방지
     json_object_put(root);
+    updatelistId(listId);
     return result;
 }
 
 // 지출 내역 추가 (RETURN 수정된 데이터)
-char* addSpendList(char* jsonData, char* listId, char* HistoryData) {
-    struct json_object* root;           // 전체 리스트 내역
-    struct json_object* typeList;       // 수입 | 지출내역
-    struct json_object* listInfo;       // 내역 세부 데이터
+char* addSpendList(char* jsonData, char* HistoryData) {
+    struct json_object* root;           				// 전체 리스트 내역
+    struct json_object* typeList;       				// 수입 | 지출내역
+    struct json_object* listInfo;       				// 내역 세부 데이터
+    char* listId = loadFile(RECENT_LISTID_FILE_PATH);	// 내역 고유번호
     
     // 기존 JSON 데이터 파싱
     root = json_tokener_parse(jsonData);
@@ -63,6 +87,7 @@ char* addSpendList(char* jsonData, char* listId, char* HistoryData) {
     
     // 메모리 누수 방지
     json_object_put(root);
+    updatelistId(listId);
     return result;
 }
 
@@ -137,10 +162,11 @@ int getSpendLimit(char* jsonData) {
 }
 
 // 지출 예약 내역 추가 (RETURN 수정된 데이터)
-char* setSpendPromise(char* jsonData, char* listId, char* HistoryData) {
-    struct json_object* root;           // 전체 리스트 내역
-    struct json_object* typeList;       // 수입 | 지출내역
-    struct json_object* listInfo;       // 내역 세부 데이터
+char* setSpendPromise(char* jsonData, char* HistoryData) {
+    struct json_object* root;           				// 전체 리스트 내역
+    struct json_object* typeList;       				// 수입 | 지출내역
+    struct json_object* listInfo;       				// 내역 세부 데이터
+    char* listId = loadFile(RECENT_LISTID_FILE_PATH);	// 내역 고유번호
     
     // 기존 JSON 데이터 파싱
     root = json_tokener_parse(jsonData);
@@ -159,6 +185,7 @@ char* setSpendPromise(char* jsonData, char* listId, char* HistoryData) {
     
     // 메모리 누수 방지
     json_object_put(root);
+    updatelistId(listId);
     return result;
 }
 

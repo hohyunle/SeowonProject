@@ -19,14 +19,15 @@ int main(void) {
     // printf("saveStringToFile 함수 결과: %d\n", result);
 
     char *examText = "{\"날짜\": \"2023-11-09\",\"금액\": \"5000\",\"수입처\": \"용돈\",\"메모\": \"\",\"카테고리\": \"tag2\"}";
-    char *uniqueId = "15";
+    // char *uniqueId = "15";
     char *listData = loadFile(SPEND_FILE_PATH);
     
     // printf("\n%s\n", incomeData);
     // free(incomeData);
-
-    // int getResult = setSpendLimit(incomeData, "300000");
-    char* getResult = findDate(listData, "지출목록", "2023-11");
+    
+    char* getResult = addSpendList(listData, examText);
+    // int getResult = setSpendLimit(listData, "300000");
+    // char* getResult = findDate(listData, "지출목록", "2023-11");
     // char* getResult = findTag(listData, "지출목록", "tag1");
     printf("%s\n", getResult);
     // free(getResult);

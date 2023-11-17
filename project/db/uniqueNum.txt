@@ -1,10 +1,1 @@
-수입 내역 생성: addIncomeList(수입리스트 데이터(char*), 내역 고유번호(int), 저장할 내역데이터(char*)) return 수정된 데이터(char*)
-지출 내역 생성: addSpendList(지출리스트 데이터(char*), 내역 고유번호(int), 저장할 내역데이터(char*)) return 수정된 데이터(char*)
-
-지출액 설정: setSpendLimit(지출리스트 데이터(char*), 지출 한도금액(int)) return 지출한도금액-총지출액(int)
-    알림: UI로 블록을 만들어 광고 배너처럼 추가 (ex. "~원 만큼 남았습니다.")
-지출 예약: setSpendPromise(지출리스트 데이터(char*), 지출 예약 데이터(char*)) return 예약된 데이터(char*)
-    알림: UI로 블록을 만들어 광고 배너처럼 추가 (ex. "[2023-11-20] ~ 지출이 예약되어있습니다.")
-수입/지출 내역 검색: 
-    날짜: findDate(지출리스트 데이터(char*), 날짜(char*)) return 일치하는 데이터(char*)
-    카테고리: findTag(지출리스트 데이터(char*), 날짜(char*)) return 일치하는 데이터(char*)
+8
