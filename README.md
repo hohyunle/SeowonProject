@@ -90,8 +90,8 @@
 | int setSpendLimit(char* jsonData, char* spendPrice) | 지출 한도를 설정합니다. | 지출내역(char), 지출 한도액(int) | 지출 한도액 - 총지출액(int) |
 | int getSpendLimit(char* jsonData) | 지출 내역 현황을 출력합니다. | 지출내역(char), 지출 예약 내역(char) | 지출 한도액 - 총지출액(int) |
 | char* setSpendPromise(char* jsonData, char* HistoryData) | 지출 예약 내역을 추가합니다. | 수입내역(char), 새로운 내역(char) | 수정된 지출 예약 내역(char) |
-| char* findDate(char* jsonData, char* actList, char* targetDate) | 수입 및 지출 내역을 날짜로 검색합니다. | 전체 내역(char), 수입 | 지출내역(char), 날짜(char) | 일치 내역(char) |
-| char* findTag(char* jsonData, char* actList, char* targetTag) | 수입 및 지출 내역을 카테고리로 검색합니다. | 전체 내역(char), 수입 | 지출내역(char), 카테고리(char) | 일치 내역(char) |
+| char* findDate(char* jsonData, char* actList, char* targetDate) | 수입 및 지출 내역을 날짜로 검색합니다. | 지출내역(char), 날짜(char) | 일치 내역(char) |
+| char* findTag(char* jsonData, char* actList, char* targetTag) | 수입 및 지출 내역을 카테고리로 검색합니다. | 지출내역(char), 카테고리(char) | 일치 내역(char) |
         
         
 ## 🔧 IDE WorkSpace Tip & Guide
