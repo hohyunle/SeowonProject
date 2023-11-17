@@ -99,7 +99,7 @@
 * **fs.h**
         
 | 함수(Function) | 역할(Role) | 인수(Argument) | 출력 값(Return Value) |
-|:--------------:|:---------:|:-------------:|:--------------------|
+|:--------------:|:---------:|:-------------:|:--------------------:|
 | char* loadFile(const char* filename) | 지정한 경로의 파일 데이터를 출력합니다. | 파일 위치(char) | 읽은 데이터(char) |
 | bool saveFile(const char* filename, const char* data) | 지정한 경로에 받은 데이터를 파일에 저장합니다. | 파일 위치(char), 저장할 데이터(char) | 출력 성공/실패(bool) |
 
