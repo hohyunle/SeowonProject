@@ -80,6 +80,9 @@
         | prompt.h        	| UI 관련 라이브러리     		   									   |
         
     * **사용자 정의 라이브러리 세부 내용**
+       ```
+   ---
+   ```
 * **data_manager.h**
         
 | 함수(Function) | 역할(Role) | 인수(Argument) | 출력 값(Return Value) |
