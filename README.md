@@ -80,7 +80,7 @@
         | prompt.h        	| UI 관련 라이브러리     		   									   |
         
     * **사용자 정의 라이브러리 세부 내용**
-    	<hr>
+<hr>
         
 * **data_manager.h**
         
